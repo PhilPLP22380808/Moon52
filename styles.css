@@ -1344,9 +1344,13 @@ section {
         font-size: 2.5rem;
     }
 
+    .hero-content {
+        padding: 0 15px;
+    }
+
     .hero-subtitle {
         font-size: 1rem;
-        padding: 0 10px;
+        padding: 0;
     }
 
     .hero-cta {
@@ -1596,21 +1600,35 @@ section {
         font-size: 0.95rem;
     }
 
-    /* Show moon on mobile - smaller and positioned at top */
+    /* Show moon on mobile - centered at top */
     .moon-container {
         display: block;
-        top: 8%;
-        right: 5%;
+        top: 6%;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
         opacity: 0.5;
+        animation: floatCentered 8s ease-in-out infinite;
+    }
+
+    @keyframes floatCentered {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(-15px); }
     }
 
     .moon {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
     }
 
     .crater {
-        transform: scale(0.4);
+        transform: scale(0.5);
+    }
+
+    /* Reduce hero padding on mobile */
+    .hero-content {
+        padding: 0 10px;
+        max-width: 100%;
     }
 
     .scroll-indicator {
@@ -1804,18 +1822,21 @@ section {
     }
 
     .moon-container {
-        top: 6%;
-        right: 3%;
+        top: 5%;
         opacity: 0.4;
     }
 
     .moon {
-        width: 60px;
-        height: 60px;
+        width: 80px;
+        height: 80px;
     }
 
     .crater {
-        transform: scale(0.3);
+        transform: scale(0.4);
+    }
+
+    .hero-content {
+        padding: 0 8px;
     }
 
     .section-title {
