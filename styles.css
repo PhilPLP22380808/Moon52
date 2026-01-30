@@ -1580,11 +1580,16 @@ section {
     }
 
     .hero {
-        padding-top: 60px;
+        padding-top: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
     }
 
     .hero-content {
         padding: 0 15px;
+        margin-top: 0;
     }
 
     .hero-title {
@@ -1602,34 +1607,37 @@ section {
         font-size: 0.95rem;
     }
 
-    /* Show moon on mobile - centered at top */
+    /* Show moon on mobile - positioned just above text */
     .moon-container {
         display: block;
-        top: 6%;
+        position: relative;
+        top: auto;
         right: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        opacity: 0.5;
-        animation: floatCentered 8s ease-in-out infinite;
+        left: auto;
+        transform: none;
+        opacity: 1;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        animation: floatMobile 8s ease-in-out infinite;
     }
 
-    @keyframes floatCentered {
-        0%, 100% { transform: translateX(-50%) translateY(0); }
-        50% { transform: translateX(-50%) translateY(-15px); }
+    @keyframes floatMobile {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
     }
 
     .moon {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
 
     .crater {
-        transform: scale(0.5);
+        transform: scale(0.6);
     }
 
-    /* Reduce hero padding on mobile */
+    /* Hero content on mobile */
     .hero-content {
-        padding: 0 10px;
+        padding: 0 15px;
         max-width: 100%;
     }
 
@@ -1824,21 +1832,21 @@ section {
     }
 
     .moon-container {
-        top: 5%;
-        opacity: 0.4;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
     .moon {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
     }
 
     .crater {
-        transform: scale(0.4);
+        transform: scale(0.5);
     }
 
     .hero-content {
-        padding: 0 8px;
+        padding: 0 12px;
     }
 
     .section-title {
