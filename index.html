@@ -210,6 +210,10 @@
                     </div>
                 </div>
             </div>
+            <div class="carousel-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+            </div>
         </div>
     </section>
 
@@ -321,6 +325,34 @@
                 navbar.classList.remove('menu-open');
             });
         });
+
+        // Carousel indicator functionality
+        const carousel = document.querySelector('.case-studies-grid');
+        const indicators = document.querySelectorAll('.carousel-indicators .indicator');
+        const cards = document.querySelectorAll('.case-study-card');
+
+        if (carousel && indicators.length > 0) {
+            carousel.addEventListener('scroll', () => {
+                const scrollLeft = carousel.scrollLeft;
+                const cardWidth = cards[0].offsetWidth + 24; // card width + gap
+                const activeIndex = Math.round(scrollLeft / cardWidth);
+
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === activeIndex);
+                });
+            });
+
+            // Click on indicator to scroll to card
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    const cardWidth = cards[0].offsetWidth + 24;
+                    carousel.scrollTo({
+                        left: index * cardWidth,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        }
     </script>
 </body>
 </html>
